@@ -3,54 +3,16 @@ import java.util.*;
 public class CompareLauncher {
 
 
-    private static final Alphabet alphabet = new Alphabet();
-    private static Map<Integer, Letter> result = new HashMap<>();
 
+    private static LetterComporator comporator = new LetterComporator();
 
-    public void compareTwoLetters(Letter firstLetter, Letter secondLetter) {
-
-
-        Character[][] firstArr = firstLetter.getArrayFromFile(firstLetter.getFile());
-        Character[][] secondArr = secondLetter.getArrayFromFile(secondLetter.getFile());
-
-        int percent = 0;
-
-//        int h = (firstLetter.getHeight() < secondLetter.getHeight()) ? firstLetter.getHeight() : secondLetter.getHeight();
-//        int w = (firstLetter.getWidth() < secondLetter.getWidth()) ? firstLetter.getWidth() : secondLetter.getWidth();
-
-        for (int i = 0; i < 18; i++) {
-            for (int j = 0; j < 18; j++) {
-                if (firstArr[i][j] == secondArr[i][j]) {
-                    percent++;
-                }
-            }
-        }
-        result.put(percent, secondLetter);
-//        System.out.println("Буквы " + firstLetter.getFile().getName() + " и " + secondLetter.getFile().getName() + " совпали на " + percent + "%");
-    }
-
-    public Letter compareLetterWithAlphabet(Letter letter) {
-
-        for (Letter let : alphabet.getAlphabet()) {
-            compareTwoLetters(letter, let);
-        }
-
-        int max = 0;
-        for (Integer key : result.keySet()) {
-            if (key>max) {
-                max = key;
-            }
-        }
-        return result.get(max);
-    }
 
     public String findWord(Letter[] word) {
         Letter l;
         StringBuilder stringWord = new StringBuilder();
         for (Letter let : word) {
-            l = compareLetterWithAlphabet(let);
+            l = comporator.compareLetterWithAlphabet(let);
             stringWord.append(l.getFile().getName());
-            result.clear();
         }
         return stringWord.toString();
     }

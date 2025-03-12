@@ -8,12 +8,14 @@ public class Main {
     public static void main(String[] args) {
 
         CompareLauncher compareLauncher = new CompareLauncher();
+        LetterComporator comporator = new LetterComporator();
+
         Letter firstLetter = new Letter("E");
         Letter secondLetter = new Letter("F");
 
 
 
-//        compareLauncher.compareTwoLetters(firstLetter, secondLetter);
+        comporator.compareTwoLetters(firstLetter, secondLetter);
 
     compareLauncher.init();
 
