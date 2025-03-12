@@ -26,7 +26,7 @@ public class CompareLauncher {
             }
         }
         result.put(percent, secondLetter);
-до//        System.out.println("Буквы " + firstLetter.getFile().getName() + " и " + secondLetter.getFile().getName() + " совпали на " + percent + "%");
+//        System.out.println("Буквы " + firstLetter.getFile().getName() + " и " + secondLetter.getFile().getName() + " совпали на " + percent + "%");
     }
 
     public Letter compareLetterWithAlphabet(Letter letter) {
