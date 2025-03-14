@@ -19,7 +19,7 @@ public class CompareLauncher {
 
     private String[] getWord() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите слово на английском языке");
+        System.out.println("Введите букву/слово на английском языке");
         String word = in.nextLine();
         if (!word.matches("[ a-zA-Z]+")) {
             do {
