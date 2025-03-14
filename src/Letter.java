@@ -86,7 +86,7 @@ public class Letter {
             }
 
 
-            String[] rows = result.toString().split("\n"); // Разделяем на строки
+            String[] rows = result.toString().trim().split("\n"); // Разделяем на строки
             for (int i = 0; i < rows.length && i < 18; i++) {  // Заполняем строки
                 String row = rows[i];
                 for (int j = 0; j < row.length() && j < 18; j++) {  // Заполняем столбцы

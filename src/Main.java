@@ -10,23 +10,13 @@ public class Main {
         CompareLauncher compareLauncher = new CompareLauncher();
         LetterComporator comporator = new LetterComporator();
 
-        Letter firstLetter = new Letter("E");
-        Letter secondLetter = new Letter("F");
+//        Letter firstLetter = new Letter("A");
+//        Letter secondLetter = new Letter("V");
 
-
-
-        comporator.compareTwoLetters(firstLetter, secondLetter);
+//        comporator.compareTwoLetters(firstLetter, secondLetter);
+//        comporator.compareLetterWithAlphabet(firstLetter);
 
     compareLauncher.init();
-
-
-
-
-
-
-
-
-
 
 
     }

@@ -15,9 +15,6 @@ public class LetterComporator {
 
         int percent = 0;
 
-//        int h = (firstLetter.getHeight() < secondLetter.getHeight()) ? firstLetter.getHeight() : secondLetter.getHeight();
-//        int w = (firstLetter.getWidth() < secondLetter.getWidth()) ? firstLetter.getWidth() : secondLetter.getWidth();
-
         for (int i = 0; i < 18; i++) {
             for (int j = 0; j < 18; j++) {
                 if (firstArr[i][j] == secondArr[i][j]) {
@@ -26,7 +23,7 @@ public class LetterComporator {
             }
         }
         result.put(percent, secondLetter);
-//        System.out.println("Буквы " + firstLetter.getFile().getName() + " и " + secondLetter.getFile().getName() + " совпали на " + percent + "%");
+//        System.out.println("Буквы " + firstLetter.getFile().getName() + " и " + secondLetter.getFile().getName() + " совпали на " + ((percent > 200) ? 100 : percent) + "%");
     }
 
 
