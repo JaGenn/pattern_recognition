@@ -21,11 +21,11 @@ public class CompareLauncher {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите букву/слово на английском языке");
         String word = in.nextLine();
-        if (!word.matches("[ a-zA-Z]+")) {
+        if (!word.matches("[a-zA-Z ]+") || word.isBlank()) {
             do {
-                System.out.println("Введите слово на английском языке");
+                System.out.println("Введите букву/слово на английском языке");
                 word = in.nextLine();
-            } while (!word.matches("[ a-zA-Z]+"));
+            } while (!word.matches("[a-zA-Z ]+") || word.isBlank());
         }
         String[] words = word.split(" ");
         in.close();
