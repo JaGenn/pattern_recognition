@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Alphabet {
 
-    private List<Letter> alphabet = new ArrayList<>();
+    private final List<Letter> alphabet = new ArrayList<>();
 
     public Alphabet() {
         alphabet.add(new Letter("A"));

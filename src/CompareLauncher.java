@@ -2,35 +2,7 @@ import java.util.*;
 
 public class CompareLauncher {
 
-
-
-    private static LetterComporator comporator = new LetterComporator();
-
-
-    public String findWord(Letter[] word) {
-        Letter l;
-        StringBuilder stringWord = new StringBuilder();
-        for (Letter let : word) {
-            l = comporator.compareLetterWithAlphabet(let);
-            stringWord.append(l.getFile().getName());
-        }
-        return stringWord.toString();
-    }
-
-    private String[] getWord() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите букву/слово на английском языке");
-        String word = in.nextLine();
-        if (!word.matches("[a-zA-Z ]+") || word.isBlank()) {
-            do {
-                System.out.println("Введите букву/слово на английском языке");
-                word = in.nextLine();
-            } while (!word.matches("[a-zA-Z ]+") || word.isBlank());
-        }
-        String[] words = word.split(" ");
-        in.close();
-        return words;
-    }
+    private final LetterComporator comporator = new LetterComporator();
 
     public void init() {
 
@@ -53,6 +25,33 @@ public class CompareLauncher {
         for (String s : sentence) {
             System.out.print(s + " ");
         }
+    }
+
+    // Метод принимает символы с консоли и обоспечивает валидацию
+    private String[] getWord() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите букву/слово на английском языке");
+        String word = in.nextLine();
+        if (!word.matches("[a-zA-Z ]+") || word.isBlank()) {
+            do {
+                System.out.println("Введите букву/слово на английском языке");
+                word = in.nextLine();
+            } while (!word.matches("[a-zA-Z ]+") || word.isBlank());
+        }
+        String[] words = word.split(" ");
+        in.close();
+        return words;
+    }
+
+
+    private String findWord(Letter[] word) {
+        Letter l;
+        StringBuilder stringWord = new StringBuilder();
+        for (Letter let : word) {
+            l = comporator.compareLetterWithAlphabet(let);
+            stringWord.append(l.getFile().getName());
+        }
+        return stringWord.toString();
     }
 
 }
